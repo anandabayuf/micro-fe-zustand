@@ -19,3 +19,5 @@ export const useAuth = create<AuthStore>()(
 		{ name: 'auth' }
 	)
 );
+
+export const HELLO_WORLD = 'HELLO WORLD!';

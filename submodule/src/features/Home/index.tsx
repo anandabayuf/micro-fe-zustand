@@ -3,20 +3,19 @@ import { useAuth } from './store';
 import { Button } from 'antd';
 
 const Home: React.FC = () => {
-	const { token, user, logOut } = useAuth();
-
 	return (
 		<div>
 			<div>HOME</div>
-			<div>User: {JSON.stringify(user)}</div>
-			<div>token: {token}</div>
+			{document.cookie}
+			{/* <div>User: {JSON.stringify(parseCookie()?.user)}</div>
+			<div>token: {parseCookie()?.token}</div> */}
 
-			<Button
+			{/* <Button
 				danger
 				onClick={() => logOut()}
 			>
 				Logout
-			</Button>
+			</Button> */}
 		</div>
 	);
 };
