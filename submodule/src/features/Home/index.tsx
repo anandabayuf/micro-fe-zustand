@@ -1,21 +1,16 @@
 import React from 'react';
-import { useAuth } from './store';
-import { Button } from 'antd';
+import { getParsedCookie, setCookie } from './utils';
 
 const Home: React.FC = () => {
 	return (
 		<div>
 			<div>HOME</div>
-			{document.cookie}
-			{/* <div>User: {JSON.stringify(parseCookie()?.user)}</div>
-			<div>token: {parseCookie()?.token}</div> */}
+			<div>User: {getParsedCookie('user')}</div>
+			<div>token: {getParsedCookie('token')}</div>
 
-			{/* <Button
-				danger
-				onClick={() => logOut()}
-			>
-				Logout
-			</Button> */}
+			<button onClick={() => setCookie('token', 'MICRONTOLLL')}>
+				Change Token
+			</button>
 		</div>
 	);
 };

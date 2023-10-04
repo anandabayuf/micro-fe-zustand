@@ -5,7 +5,9 @@ export const getParsedCookie = (key: string) => {
 
 	for (let i = 0; i < cookie.length; i++) {
 		const parsedCookie = cookie[i].split('=');
-		if (parsedCookie[0] === key) return parsedCookie[1];
+		console.log(parsedCookie);
+
+		if (parsedCookie[0].trim() === key) return parsedCookie[1];
 	}
 
 	return undefined;
