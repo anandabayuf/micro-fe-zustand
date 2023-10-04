@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkcontainer=self.webpackChunkcontainer||[]).push([[47],{47:function(t,n,o){o.r(n),o.d(n,{getParsedCookie:function(){return e},setCookie:function(){return i}});var c="http://192.168.56.99",e=function(t){for(var n=document.cookie.split(";"),o=0;o<n.length;o++){var c=n[o].split("=");if(c[0]===t)return c[1]}},i=function(t,n){var o=c.split("http://")[1];document.cookie="".concat(t,"=").concat(n,";domain=").concat(o)}}}]);
+//# sourceMappingURL=47.414ae9d1.chunk.js.map
