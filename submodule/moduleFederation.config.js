@@ -1,10 +1,18 @@
 const { dependencies } = require('./package.json');
 
+const MODULE_URL = process.env.REACT_APP_MODULE_URL;
+
 module.exports = {
 	name: 'submodule',
 	filename: 'remoteEntry.js',
-	exposes: {},
-	remotes: {},
+	exposes: {
+		'./AppFooter': './src/general-components/AppFooter',
+		'./AppHeader': './src/general-components/AppHeader',
+		'./HomePage': './src/pages/Home',
+	},
+	remotes: {
+		container: `container@${MODULE_URL}:3000/remoteEntry.js`,
+	},
 	shared: {
 		...dependencies,
 		react: {
