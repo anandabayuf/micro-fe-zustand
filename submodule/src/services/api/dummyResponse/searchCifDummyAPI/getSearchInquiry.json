@@ -1,0 +1,10 @@
+{
+  "status": "SUCCESS",
+  "message": null,
+  "business": false,
+  "error": false,
+  "content": {
+    "noCif": "Amazon01",
+    "name": "Amazon"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "status": "SUCCESS",
+  "message": null,
+  "business": false,
+  "error": false,
+  "content": {
+    "noCif": "8188171771921",
+    "name": "PT BANK ICT"
+  }
+}

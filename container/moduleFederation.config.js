@@ -5,9 +5,7 @@ const MODULE_URL = process.env.REACT_APP_MODULE_URL;
 module.exports = {
 	name: 'container',
 	filename: 'remoteEntry.js',
-	exposes: {
-		'./utils': './src/utils',
-	},
+	exposes: {},
 	remotes: {
 		submodule: `submodule@${MODULE_URL}:3001/remoteEntry.js`,
 	},

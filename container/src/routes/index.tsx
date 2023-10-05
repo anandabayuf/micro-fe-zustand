@@ -1,17 +1,30 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { routeList } from './routeList';
+import { PUBLIC_ROUTES, SECURED_ROUTES } from './routeList';
+import AppRequireAuth from './components/AppRequireAuth';
 
 const AppRoutes: React.FC = () => {
 	return (
 		<React.Suspense fallback="Loading...">
 			<Routes>
-				{routeList.map((route) => (
+				{PUBLIC_ROUTES.map((route, index) => (
 					<Route
+						key={index}
 						{...route}
-						key={route.path as string}
 					/>
 				))}
+
+				<Route element={<AppRequireAuth />}>
+					{[...SECURED_ROUTES].map((route, index) => {
+						return (
+							<Route
+								key={index}
+								path={route?.path}
+								element={route?.element}
+							/>
+						);
+					})}
+				</Route>
 			</Routes>
 		</React.Suspense>
 	);

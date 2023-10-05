@@ -1,0 +1,10 @@
+{
+  "status": "SUCCESS",
+  "message": null,
+  "business": false,
+  "error": false,
+  "content": {
+    "noCif": "CIF006",
+    "name": "cif 006"
+  }
+}

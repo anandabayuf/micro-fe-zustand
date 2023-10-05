@@ -1,34 +1,44 @@
 import React from 'react';
 import { Button, Form, Input } from 'antd';
-import { useAuth } from '../../store';
 import { useNavigate } from 'react-router-dom';
-import { setCookie } from '../../../../utils';
+import { setCookie } from '../../../../utils/cookieUtils';
+import { useLoginMutation } from '@/services/authService/auth.api';
+import { TUserData } from '@/services/authService/types';
 
 const LoginForm: React.FC = () => {
-	const { setToken, setUser } = useAuth();
 	const navigate = useNavigate();
 
-	const handleLogin = (value: any) => {
-		if (!value) return;
+	// const handleLogin = (value: any) => {
+	// 	if (!value) return;
 
-		const token =
-			'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
+	// 	const token =
+	// 		'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
 
-		setUser(value);
-		setToken(token);
+	// 	setUser(value);
+	// 	setToken(token);
 
-		setCookie('user', JSON.stringify(value));
-		setCookie('token', token);
+	// 	setCookie('user', JSON.stringify(value));
+	// 	setCookie('token', token);
 
-		navigate('/', { replace: true });
+	// 	navigate('/', { replace: true });
+	// };
+
+	const [login] = useLoginMutation();
+
+	const onFinish = async (userData: TUserData) => {
+		try {
+			await login(userData).unwrap();
+			navigate('/home');
+		} catch (error: unknown) {
+			console.error(error);
+		}
 	};
 
 	return (
 		<Form
 			layout="vertical"
-			onFinish={handleLogin}
+			onFinish={onFinish}
 		>
-			{}
 			<Form.Item
 				name="username"
 				label="Username"

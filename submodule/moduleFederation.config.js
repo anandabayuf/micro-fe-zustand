@@ -9,6 +9,7 @@ module.exports = {
 		'./AppFooter': './src/general-components/AppFooter',
 		'./AppHeader': './src/general-components/AppHeader',
 		'./HomePage': './src/pages/Home',
+		'./moduleReducers': './src/redux/moduleReducer.ts',
 	},
 	remotes: {
 		container: `container@${MODULE_URL}:3000/remoteEntry.js`,
