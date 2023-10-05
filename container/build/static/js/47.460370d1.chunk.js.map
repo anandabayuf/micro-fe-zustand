@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/47.460370d1.chunk.js","mappings":"sJAAO,IAAMA,EAAW,SAACC,EAAWC,GAAS,OAAaD,EAAIC,CAAE,C","sources":["utils/index.tsx"],"sourcesContent":["export const addition = (x: number, y: number): number => x + y;\r\n"],"names":["addition","x","y"],"sourceRoot":""}
