@@ -1,4 +1,26 @@
-import { TFetchResponse, TPagination } from '@/services/types';
+export type TPagination = {
+	totalRecord: number;
+	offset: number;
+	page: number;
+	size: number;
+	sort: string[];
+};
+
+export type TResponse = {
+	status: string;
+	message: null;
+	business: false;
+	error: false;
+	totalRecord?: number;
+};
+
+export type TContent<T> = {
+	content: T;
+};
+
+export type TFetchResponse<T extends null | any> = T extends null
+	? TResponse
+	: TResponse & TContent<T>;
 
 export type TUser = {
 	username: string;

@@ -3,18 +3,16 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-const ProviderWrapper = React.lazy(() => import('store/ProviderWrapper'));
+import ProviderWrapper from './services/components/ProviderWrapper';
 
 const root = ReactDOM.createRoot(
 	document.getElementById('root') as HTMLElement
 );
 root.render(
 	<React.StrictMode>
-		<React.Suspense fallback={'Loading...'}>
-			<ProviderWrapper>
-				<App />
-			</ProviderWrapper>
-		</React.Suspense>
+		<ProviderWrapper>
+			<App />
+		</ProviderWrapper>
 	</React.StrictMode>
 );
 

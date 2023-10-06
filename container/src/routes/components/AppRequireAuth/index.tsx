@@ -1,11 +1,10 @@
-import { useSelectAuth } from '@/services/authService/slice';
+import { useSelectAuth } from 'store/authSlice';
 import { parseAccessToken } from '@/utils/parserUtils';
 import React from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
 
 const AppRequireAuth: React.FC = () => {
 	const navigate = useNavigate();
-	//@ts-ignore
 	const { accessToken } = useSelectAuth();
 
 	React.useEffect(() => {

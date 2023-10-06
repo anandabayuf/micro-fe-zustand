@@ -2,7 +2,7 @@ import React from 'react';
 import { getParsedCookie, setCookie } from './utils';
 import { useGetUserListQuery } from './api';
 import { Table, Typography } from 'antd';
-import { useSelectAuth } from '@/services/authService/slice';
+import { useSelectAuth } from 'store/authSlice';
 
 const Home: React.FC = () => {
 	const { data } = useGetUserListQuery({

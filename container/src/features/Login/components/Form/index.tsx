@@ -2,8 +2,8 @@ import React from 'react';
 import { Button, Form, Input } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import { setCookie } from '../../../../utils/cookieUtils';
-import { useLoginMutation } from '@/services/authService/auth.api';
-import { TUserData } from '@/services/authService/types';
+import { useLoginMutation } from 'store/authApi';
+import { TUser } from '../../types';
 
 const LoginForm: React.FC = () => {
 	const navigate = useNavigate();
@@ -25,7 +25,7 @@ const LoginForm: React.FC = () => {
 
 	const [login] = useLoginMutation();
 
-	const onFinish = async (userData: TUserData) => {
+	const onFinish = async (userData: TUser) => {
 		try {
 			await login(userData).unwrap();
 			navigate('/home');
