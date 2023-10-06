@@ -13,7 +13,10 @@ const Home: React.FC = () => {
 
 			<Button
 				danger
-				onClick={() => logOut()}
+				onClick={() => {
+					localStorage.setItem('submodule', 'AIUEO');
+					logOut();
+				}}
 			>
 				Logout
 			</Button>
