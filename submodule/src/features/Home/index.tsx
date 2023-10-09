@@ -1,5 +1,5 @@
 import React from 'react';
-import { getParsedCookie, setCookie } from './utils';
+import { getParsedCookie } from '@/utils/cookieUtils';
 import { useGetUserListQuery } from './api';
 import { Table, Typography } from 'antd';
 import { useSelectAuth } from 'store/authSlice';
@@ -9,22 +9,17 @@ const Home: React.FC = () => {
 		page: 0,
 		size: 10,
 	});
-	const { accessToken } = useSelectAuth();
+	const { accessToken, userInfo } = useSelectAuth();
 	return (
 		<div>
 			<div>HOME</div>
-			<div>{accessToken}</div>
 			<div>
 				<strong>Access Token:</strong>{' '}
-				<Typography.Text>
-					{getParsedCookie('accessToken')}
-				</Typography.Text>
+				<Typography.Text>{accessToken}</Typography.Text>
 			</div>
 			<div>
-				<strong>publicKey:</strong>{' '}
-				<Typography.Text>
-					{getParsedCookie('publicKey')}
-				</Typography.Text>
+				<strong>userInfo:</strong>{' '}
+				<Typography.Text>{JSON.stringify(userInfo)}</Typography.Text>
 			</div>
 
 			<Table

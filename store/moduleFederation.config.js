@@ -8,8 +8,8 @@ module.exports = {
 	exposes: {
 		'./ProviderWrapper': './src/services/components/ProviderWrapper',
 		'./authApi': './src/services/authService/auth.api.ts',
-		'./securedApi': './src/services/authService/auth.api.ts',
-		'./authSlice': './src/services/secured.api.ts',
+		'./securedApi': './src/services/secured.api.ts',
+		'./authSlice': './src/services/authService/slice.ts',
 	},
 	remotes: {},
 	shared: {

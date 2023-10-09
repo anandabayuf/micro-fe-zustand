@@ -10,7 +10,6 @@ const AppRequireAuth: React.FC = () => {
 	React.useEffect(() => {
 		const validateAccessToken = () => {
 			const parsedAccessToken = parseAccessToken(accessToken as string);
-			console.log(accessToken);
 			if (!accessToken || !parsedAccessToken) {
 				return navigate('/login');
 			}
